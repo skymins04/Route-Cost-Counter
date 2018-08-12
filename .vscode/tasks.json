@@ -1,0 +1,60 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C_Build",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-o",
+                "${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "C++_Build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "execute_C_C++",
+            "type": "shell",
+            "command": "./${fileBasenameNoExtension}.exe",
+            "args": [
+                "-o",
+                "${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Anaconda3 prompt",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/K",
+                "C:\\Users\\skymi\\Anaconda3\\Scripts\\activate.bat"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
